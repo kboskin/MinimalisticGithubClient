@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/active_green</color>
+    <color name="colorPrimaryDark">@color/leafy_green</color>
+    <color name="colorAccent">@color/colorPrimaryDark</color>
+
+    <!--Color Palette-->
+    <color name="active_green">#53c43f</color>
+    <color name="leafy_green">#4aad39</color>
+    <color name="leafy_green_opacity40">#BAE8B2</color>
+    <color name="sunflower_yellow">#fce800</color>
+    <color name="yellow">#fadb02</color>
+    <color name="red">#fa0007</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="dark_grey">#373737</color>
+    <color name="brown_grey">#959595</color>
+    <color name="inactive_gray">#eaeaea</color>
+    <color name="medium_grey">#5a5a5a</color>
+    <color name="very_light_pink">#bdbdbd</color>
+    <color name="white_three">#f9f9f9</color>
+    <color name="disabled_gray">#cccccc</color>
+    <color name="white_transparent">#80ffffff</color>
+    <color name="white_gray">#e9e7e7</color>
+
+    <color name="color_status_bar_dark">@color/colorPrimary</color>
+    <color name="color_status_bar_light">@color/white</color>
+    <color name="color_background_status_bar_light">@color/very_light_pink</color>
+
+    <color name="color_window_background">@color/white</color>
+    <color name="color_window_background_grey">@color/white_three</color>
+
+    <color name="overlay_black">#66000000</color>
+
+    <color name="divider_color">@color/inactive_gray</color>
+
+    <!--Text colors-->
+    <color name="color_text_white">@color/white</color>
+    <color name="color_text_inactive_gray">@color/inactive_gray</color>
+    <color name="color_text_disabled_gray">@color/disabled_gray</color>
+    <color name="color_text_brown_gray">@color/brown_grey</color>
+    <color name="color_text_black">@color/black</color>
+    <color name="color_text_active_green">@color/active_green</color>
+    <color name="color_text_error">@color/red</color>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="emptyStateView" type="id" />
+    <item name="progressView" type="id" />
+    <item name="itemsView" type="id" />
+    <item name="containerView" type="id" />
+    <item name="homeButtonView" type="id" />
+</resources>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">presentation</string>
+    <string name="github_reader_general_title">Github reader</string>
+    <string name="search_fragment_input_hint">Enter user name here</string>
+    <string name="search_fragment_input_error">Field should not be empty</string>
+    <string name="search_fragment_button_text">Start searching!</string>
+    <string name="error_retry">retry</string>
+    <string name="error_network_title">Connectivity error</string>
+    <string name="error_not_found">No such user found, try with another name</string>
+    <string name="error_server">Something went wrong, try again</string>
+    <string name="repo_language_not_detected">Language not detected</string>
+    <string name="user_info_fragment_followers">Followers:</string>
+    <string name="user_info_fragment_following">Following:</string>
+    <string name="user_info_fragment_iv">Following:</string>
+    <string name="fragment_user_info_empty_state_title">No repos :(</string>
+    <string name="fragment_user_info_empty_state_description">No repos detected for this user</string>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="search_screen_input_margin">24dp</dimen>
+    <dimen name="search_screen_button_margin">16dp</dimen>
+    <dimen name="search_screen_github_img_margin">32dp</dimen>
+    <dimen name="toolbar_title_text_size">18sp</dimen>
+    <dimen name="toolbar_action_view_padding">16dp</dimen>
+    <dimen name="item_repo_lang_tv_margin">16dp</dimen>
+    <dimen name="item_repo_margin">16dp</dimen>
+    <dimen name="item_repo_padding">16dp</dimen>
+    <dimen name="fragment_search_img_min_height">64dp</dimen>
+    <dimen name="fragment_display_info_company_margin">16dp</dimen>
+    <dimen name="fragment_display_info_img_dimen">76dp</dimen>
+    <dimen name="fragment_display_info_img_margin_top">8dp</dimen>
+    <dimen name="fragment_display_info_rv_margin_top">16dp</dimen>
+
+</resources>

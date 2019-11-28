@@ -1,0 +1,184 @@
+allprojects {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+}
+
+ext.androidVersions = [
+        androidBuildToolsVersion: '28.0.3',
+        androidMinSdkVersion    : 21,
+        androidTargetSdkVersion : 28,
+        androidCompileSdkVersion: 28
+]
+
+def libraryVersions = [
+        //Support libraries
+        androidxLibraryVersion     : '1.0.0',
+        androidxMaterial           : '1.2.0-alpha01',
+        androidxMultidexVersion    : '2.0.0',
+        androidxConstraintVersion  : '1.1.3',
+        playServicesVersion        : '11.8.0',
+        customTabsVersion          : '27.1.0',
+        fragmentVersion            : '1.1.0-rc02',
+        roomVersion                : '2.1.0',
+        viewpager2Version          : '1.0.0-beta05',
+        circleIVVersion            : '3.0.1',
+
+        //Rx Libraries
+        rxJavaVersion              : '2.2.5',
+        rxKotlinVersion            : '2.3.0',
+        rxAndroidVersion           : '2.1.0',
+        rxRelay                    : '2.1.0',
+        rxPermissionsVersion       : '0.10.2',
+        rxPmVersion                : '1.2.3',
+        rxBindingVersion           : '2.0.0',
+        rxNetworkVersion           : '3.0.2',
+
+        //Network
+        gsonVersion                : '2.8.5',
+        okHttpVersion              : '3.12.1',
+        retrofitVersion            : '2.5.0',
+
+        //DI
+        daggerVersion              : '2.20',
+        javaxAnnotationVersion     : '1.0',
+        javaxInjectVersion         : '1',
+        glassfishAnnotationVersion : '10.0-b28',
+
+        appCoreVersion             : '3.0.0',
+        threeTenABPVersion         : '1.2.1',
+        glideVersion               : '4.8.0',
+        materialDialogsVersion     : '0.9.4.4',
+        timberVersion              : '4.7.1',
+        expandableLayoutVersion    : '2.9.2',
+        tooltipVersion             : '0.1.9',
+        pinViewVersion             : '1.4.1',
+        barcodeScannerVersion      : '1.9.8',
+        zxingVersion               : '3.6.0',
+        zxingCoreVersion           : '3.3.0',
+        cardViewVersion            : '1.0.0',
+        rangeSeekBarVersion        : 'v3.0.0',
+        inputMaskVersion           : '3.4.4',
+        stethoVersion              : '1.5.1',
+        photoViewVersion           : '2.3.0',
+        shimmersVersion            : '0.5.0',
+
+        //Testing
+        robolectricVersion         : '3.4.2',
+        jUnitVersion               : '4.12',
+        assertJVersion             : '3.8.0',
+        dexmakerVersion            : '1.0',
+        espressoVersion            : '3.0.0',
+        testingSupportLibVersion   : '0.1',
+        mockitoKotlinVersion       : '2.0.0-RC1',
+        mockitoAndroidVersion      : '2.8.47',
+        androidSupportRunnerVersion: '1.0.0',
+        androidSupportRulesVersion : '1.0.0',
+        dexmakerMockitoversion     : '2.2.0',
+        runnerVersion              : '0.5',
+
+        ciceroneVersion            : '5.0.0',
+
+        ktlintVersion              : "0.24.0"
+]
+
+ext.commonDependencies = [
+        libs                    : fileTree(dir: 'libs', include: ['*.jar']),
+        androidXAnnotations     : "androidx.annotation:annotation:${libraryVersions.androidxLibraryVersion}",
+        androidXLegacySupportV4 : "androidx.legacy:legacy-support-v4:${libraryVersions.androidxLibraryVersion}",
+        androidXLegacySupportV13: "androidx.legacy:legacy-support-v13:${libraryVersions.androidxLibraryVersion}",
+        androidXCompatV7        : "androidx.appcompat:appcompat:${libraryVersions.androidxLibraryVersion}",
+        androidXRecyclerView    : "androidx.recyclerview:recyclerview:${libraryVersions.androidxLibraryVersion}",
+        androidXCardView        : "androidx.cardview:cardview:${libraryVersions.androidxLibraryVersion}",
+        supportDesign           : "com.google.android.material:material:${libraryVersions.androidxMaterial}",
+        androidXVectorDrawable  : "androidx.vectordrawable:vectordrawable:${libraryVersions.androidxLibraryVersion}",
+        androidXConstraint      : "androidx.constraintlayout:constraintlayout:${libraryVersions.androidxConstraintVersion}",
+        multiDex                : "androidx.multidex:multidex:${libraryVersions.androidxMultidexVersion}",
+        fragment                : "androidx.fragment:fragment:${libraryVersions.fragmentVersion}",
+        room                    : "androidx.room:room-runtime:${libraryVersions.roomVersion}",
+        roomCompiler            : "androidx.room:room-compiler:${libraryVersions.roomVersion}",
+        roomRx                  : "androidx.room:room-rxjava2:${libraryVersions.roomVersion}",
+        viewpager2              : "androidx.viewpager2:viewpager2:${libraryVersions.viewpager2Version}",
+        appCoreHardware         : "com.nullgr.core:core-hardware:${libraryVersions.appCoreVersion}",
+
+        rxKotlin                : "io.reactivex.rxjava2:rxkotlin:${libraryVersions.rxKotlinVersion}",
+        rxAndroid               : "io.reactivex.rxjava2:rxandroid:${libraryVersions.rxAndroidVersion}",
+        rxPm                    : "me.dmdev.rxpm:rxpm:${libraryVersions.rxPmVersion}",
+        rxBinding               : "com.jakewharton.rxbinding2:rxbinding-kotlin:${libraryVersions.rxBindingVersion}",
+        rxRelay                 : "com.jakewharton.rxrelay2:rxrelay:${libraryVersions.rxRelay}",
+        rxPermissions           : "com.github.tbruyelle:rxpermissions:${libraryVersions.rxPermissionsVersion}",
+        rxNetwork               : "com.github.pwittchen:reactivenetwork-rx2:${libraryVersions.rxNetworkVersion}",
+
+        dagger                  : "com.google.dagger:dagger:${libraryVersions.daggerVersion}",
+        daggerCompiler          : "com.google.dagger:dagger-compiler:${libraryVersions.daggerVersion}",
+        daggerAndroid           : "com.google.dagger:dagger-android:${libraryVersions.daggerVersion}",
+        daggerAndroidProcessor  : "com.google.dagger:dagger-android-processor:${libraryVersions.daggerVersion}",
+        daggerAndroidSupport    : "com.google.dagger:dagger-android-support:${libraryVersions.daggerVersion}",
+
+        javaxAnnotation         : "javax.annotation:jsr250-api:${libraryVersions.javaxAnnotationVersion}",
+        javaxInject             : "javax.inject:javax.inject:${libraryVersions.javaxInjectVersion}",
+        glassfish               : "org.glassfish:javax.annotation:${libraryVersions.glassfishAnnotationVersion}",
+
+        retrofit                : "com.squareup.retrofit2:retrofit:${libraryVersions.retrofitVersion}",
+        retrofitConverter       : "com.squareup.retrofit2:converter-gson:${libraryVersions.retrofitVersion}",
+        retrofitAdapter         : "com.squareup.retrofit2:adapter-rxjava2:${libraryVersions.retrofitVersion}",
+
+        okHttp                  : "com.squareup.okhttp3:okhttp:${libraryVersions.okHttpVersion}",
+        okHttpLogger            : "com.squareup.okhttp3:logging-interceptor:${libraryVersions.okHttpVersion}",
+
+        appCore                 : "com.nullgr.core:core-all:${libraryVersions.appCoreVersion}",
+        appCoreInteractor       : "com.nullgr.core:core-interactor:${libraryVersions.appCoreVersion}",
+        appCoreRx               : "com.nullgr.core:core-rx:${libraryVersions.appCoreVersion}",
+        appCoreIntents          : "com.nullgr.core:core-intents:${libraryVersions.appCoreVersion}",
+        appCoreAdapterKtx       : "com.nullgr.core:core-adapter-ktx:${libraryVersions.appCoreVersion}",
+        appCoreAdapter          : "com.nullgr.core:core-adapter:${libraryVersions.appCoreVersion}",
+
+        kotlin                  : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${libraryVersions.kotlin_version}",
+        gson                    : "com.google.code.gson:gson:${libraryVersions.gsonVersion}",
+        glide                   : "com.github.bumptech.glide:glide:${libraryVersions.glideVersion}",
+        glideProcessor          : "com.github.bumptech.glide:compiler:${libraryVersions.glideVersion}",
+        materialDialogs         : "com.afollestad.material-dialogs:core:${libraryVersions.materialDialogsVersion}",
+        threeTenABP             : "com.jakewharton.threetenabp:threetenabp:${libraryVersions.threeTenABPVersion}",
+        picasso                 : "com.squareup.picasso:picasso:${libraryVersions.picassoVersion}",
+        expandableLayout        : "net.cachapa.expandablelayout:expandablelayout:${libraryVersions.expandableLayoutVersion}",
+        tooltipLibrary          : "com.github.vihtarb:tooltip:${libraryVersions.tooltipVersion}",
+        timber                  : "com.jakewharton.timber:timber:${libraryVersions.timberVersion}",
+        inputMask               : "com.redmadrobot:inputmask:${libraryVersions.inputMaskVersion}",
+        pinView                 : "com.chaos.view:pinview:${libraryVersions.pinViewVersion}",
+        barcodeScanner          : "me.dm7.barcodescanner:zxing:${libraryVersions.barcodeScannerVersion}",
+        zxing                   : "com.journeyapps:zxing-android-embedded:${libraryVersions.zxingVersion}",
+        zxingCore               : "com.google.zxing:core:${libraryVersions.zxingCoreVersion}",
+        cardView                : "com.github.captain-miao:optroundcardview:${libraryVersions.cardViewVersion}",
+        rangeSeekBar            : "com.github.Jay-Goo:RangeSeekBar:${libraryVersions.rangeSeekBarVersion}",
+
+        maps                    : "com.google.android.gms:play-services-maps:${libraryVersions.playServicesVersion}",
+        googleAnalytics         : "com.google.android.gms:play-services-analytics:${libraryVersions.googleAnalyticsVersion}",
+
+
+        ktlint                  : "com.github.shyiko:ktlint:${libraryVersions.ktlintVersion}",
+
+        cicerone                : "ru.terrakok.cicerone:cicerone:${libraryVersions.ciceroneVersion}",
+        stetho                  : "com.facebook.stetho:stetho:${libraryVersions.stethoVersion}",
+        photoView               : "com.github.chrisbanes:PhotoView:${libraryVersions.photoViewVersion}",
+        shimmers                : "com.facebook.shimmer:shimmer:${libraryVersions.shimmersVersion}",
+        cicleIV                 : "de.hdodenhof:circleimageview:${libraryVersions.circleIVVersion}"
+]
+
+ext.commonTestDependencies = [
+        junit          : "junit:junit:${libraryVersions.jUnitVersion}",
+        kotlinJUnit    : "org.jetbrains.kotlin:kotlin-test-junit:${libraryVersions.kotlin_version}",
+        assertj        : "org.assertj:assertj-core:${libraryVersions.assertJVersion}",
+        mockito        : "com.nhaarman.mockitokotlin2:mockito-kotlin:${libraryVersions.mockitoKotlinVersion}",
+        robolectric    : "org.robolectric:robolectric:${libraryVersions.robolectricVersion}",
+        supportRunner  : "com.android.support.test:runner:${libraryVersions.androidSupportRunnerVersion}",
+        supportRules   : "com.android.support.test:rules:${libraryVersions.androidSupportRulesVersion}",
+        mockitoAndroid : "org.mockito:mockito-android:${libraryVersions.mockitoAndroidVersion}",
+        espressoCore   : "androidx.test.espresso:espresso-core:3.1.0",
+        espressoIntents: "androidx.test.espresso:espresso-intents:3.1.0",
+        espressoContrib: "androidx.test.espresso:espresso-contrib:3.1.0",
+        androidRunner  : "androidx.test:runner:1.1.0",
+        androidRules   : "androidx.test:rules:1.1.0",
+]
+
+

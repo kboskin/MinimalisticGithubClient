@@ -1,0 +1,148 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+
+    def androidConfigurationVersion = rootProject.ext.androidVersions
+
+    compileSdkVersion androidConfigurationVersion.androidCompileSdkVersion
+    buildToolsVersion androidConfigurationVersion.androidBuildToolsVersion
+
+    defaultConfig {
+        minSdkVersion androidConfigurationVersion.androidMinSdkVersion
+        targetSdkVersion androidConfigurationVersion.androidTargetSdkVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        versionName rootProject.ext.applicationVersionName
+    }
+
+    dexOptions {
+        preDexLibraries = false
+        dexInProcess = false
+        javaMaxHeapSize "4g"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        quiet true
+        abortOnError false
+        ignoreWarnings true
+        disable 'InvalidPackage'
+        disable 'OldTargetApi'
+    }
+    testOptions {
+        unitTests.all {
+            jvmArgs '-noverify'
+        }
+    }
+}
+
+kapt {
+    correctErrorTypes = true
+}
+
+configurations {
+    all {
+        resolutionStrategy {
+            force "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+        }
+    }
+}
+
+androidExtensions {
+    experimental = true
+}
+
+dependencies {
+    def commonDependencies = rootProject.ext.commonDependencies
+    def commonTestDependencies = rootProject.ext.commonTestDependencies
+
+    ktlint commonDependencies.ktlint
+
+    implementation project(':common')
+    api project(':domain')
+
+    implementation commonDependencies.libs
+    implementation commonDependencies.appCore
+    implementation commonDependencies.appCoreAdapterKtx
+    implementation commonDependencies.appCoreAdapter
+
+    implementation commonDependencies.androidXAnnotations
+    implementation commonDependencies.androidXLegacySupportV4
+    implementation commonDependencies.androidXLegacySupportV13
+    implementation commonDependencies.androidXCompatV7
+    implementation commonDependencies.androidXRecyclerView
+    implementation commonDependencies.androidXCardView
+    implementation commonDependencies.supportDesign
+    implementation commonDependencies.androidXVectorDrawable
+    implementation commonDependencies.androidXConstraint
+    implementation commonDependencies.multiDex
+    implementation commonDependencies.materialDialogs
+    implementation commonDependencies.fragment
+    implementation commonDependencies.viewpager2
+
+    implementation commonDependencies.rxKotlin
+    implementation commonDependencies.rxAndroid
+    implementation commonDependencies.rxPm
+    implementation commonDependencies.rxBinding
+    implementation commonDependencies.rxNetwork
+    implementation commonDependencies.rxPermissions
+
+    implementation commonDependencies.javaxAnnotation
+    implementation commonDependencies.javaxInject
+
+    implementation commonDependencies.cicerone
+    implementation commonDependencies.cardView
+    implementation commonDependencies.inputMask
+    implementation commonDependencies.photoView
+    implementation commonDependencies.cicleIV
+
+    // Dagger2
+    kapt commonDependencies.daggerCompiler
+    kapt commonDependencies.daggerAndroidProcessor
+    implementation commonDependencies.dagger
+    implementation commonDependencies.daggerAndroid
+    implementation commonDependencies.daggerAndroidSupport
+
+    implementation commonDependencies.timber
+    implementation commonDependencies.maps
+    implementation(commonDependencies.glide) {
+        exclude group: "com.android.support"
+    }
+    kapt commonDependencies.glideProcessor
+
+    implementation commonDependencies.threeTenABP
+
+    testImplementation commonTestDependencies.junit
+    testImplementation commonTestDependencies.mockito
+    testImplementation commonTestDependencies.robolectric
+    androidTestImplementation commonTestDependencies.mockitoAndroid
+    androidTestImplementation(commonTestDependencies.espressoCore) {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    androidTestImplementation(commonTestDependencies.androidRunner) {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    androidTestImplementation(commonTestDependencies.androidRules) {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    androidTestImplementation(commonTestDependencies.espressoIntents) {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    androidTestImplementation(commonTestDependencies.espressoContrib) {
+        exclude module: 'appcompat'
+        exclude module: 'appcompat-v7'
+        exclude module: 'support-v4'
+        exclude module: 'support-v13'
+        exclude module: 'support-annotations'
+        exclude module: 'recyclerview-v7'
+        exclude module: 'design'
+    }
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.github.minimalistic.presentation.core.ui.state_view.StateWidget
+    android:id="@+id/emptyStateView"
+    android:layout_width="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_height="match_parent"
+    android:visibility="gone"
+    app:state_layout="@layout/layout_state_empty_inside"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" />
